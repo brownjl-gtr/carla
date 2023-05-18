@@ -380,5 +380,5 @@ void FWorldObserver::BroadcastTick(
       MapChange,
       PendingLightUpdates);
 
-  AsyncStream.Send(*this, std::move(buffer));
+  AsyncStream.SerializeAndSend(*this, std::move(buffer));
 }

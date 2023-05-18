@@ -77,7 +77,7 @@ void ACollisionSensor::OnCollisionEvent(
   const auto &Episode = GetEpisode();
   constexpr float TO_METERS = 1e-2;
   NormalImpulse *= TO_METERS;
-  GetDataStream(*this).Send(
+  GetDataStream(*this).SerializeAndSend(
       *this,
       Episode.SerializeActor(Actor),
       Episode.SerializeActor(OtherActor),
